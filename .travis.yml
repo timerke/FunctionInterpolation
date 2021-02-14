@@ -1,0 +1,9 @@
+language: cpp
+
+sudo: required
+
+script:
+- mkdir bin
+- cmake .
+- make
+- bin/GTests

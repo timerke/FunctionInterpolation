@@ -71,7 +71,7 @@ message("Project GUI building is finished")
 
 message("Project GTests building is started...")
 project(GTests LANGUAGES CXX)
-add_executable(GTests test/test.cpp spline/spline.cpp)
+add_executable(GTests tests/test.cpp spline/spline.cpp)
 set_target_properties(GTests PROPERTIES CXX_STANDARD 11)
 set_target_properties(GTests PROPERTIES CXX_STANDARD_REQUIRED ON)
 set_target_properties(GTests PROPERTIES RUNTIME_OUTPUT_DIRECTORY "./bin")

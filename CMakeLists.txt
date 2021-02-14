@@ -63,21 +63,7 @@ set(PROJECT_SOURCES
         lagrange/lagrange.h
 )
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(gui
-        ${PROJECT_SOURCES}
-    )
-else()
-    if(ANDROID)
-        add_library(gui SHARED
-            ${PROJECT_SOURCES}
-        )
-    else()
-        add_executable(gui
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+add_executable(gui ${PROJECT_SOURCES})
 
 set_target_properties(gui PROPERTIES RUNTIME_OUTPUT_DIRECTORY "./bin")
 target_link_libraries(gui PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::PrintSupport)
